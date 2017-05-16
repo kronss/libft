@@ -76,7 +76,14 @@ OBJECT = ./ft_memset.o \
 	./ft_lstmap.o \
 	./ft_wrdcount_del.o \
 	./ft_chrcount.o \
-	./get_next_line.o
+	./ft_chrposn.o \
+	./get_next_line.o \
+	./ft_atoi_shift_pointer.o \
+	./ft_atohex_shift_pointer.o \
+	./ft_atohex.o \
+	./ft_max.o \
+	./ft_atol.o \
+	./q_sort.o
 
 .PHONY: all clean fclean re
 

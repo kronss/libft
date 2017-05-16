@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   q_sort.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ochayche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 15:42:27 by ochayche          #+#    #+#             */
-/*   Updated: 2016/11/26 15:42:28 by ochayche         ###   ########.fr       */
+/*   Created: 2017/03/23 11:54:49 by ochayche          #+#    #+#             */
+/*   Updated: 2017/03/23 11:54:50 by ochayche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+**	q_sort(array, 0, max - 1)
+*/
+
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+void		q_sort(int *s_arr, int first, int last)
 {
-	int		i;
+	int i;
+	int j;
+	int x;
 
-	i = 0;
-	while (s[i])
+	i = first;
+	j = last;
+	x = s_arr[(first + last) / 2];
+	while (i <= j)
 	{
-		if (s[i] == c)
-			return ((char*)&s[i]);
-		i++;
+		while (s_arr[i] < x)
+			i++;
+		while (s_arr[j] > x)
+			j--;
+		if (i <= j)
+		{
+			if (s_arr[i] > s_arr[j])
+				ft_swap(&s_arr[i], &s_arr[j]);
+			i++;
+			j--;
+		}
 	}
-	if (s[i] == '\0' && c == '\0')
-		return ((char*)&s[i]);
-	return (NULL);
+	if (i < last)
+		q_sort(s_arr, i, last);
+	if (first < j)
+		q_sort(s_arr, first, j);
 }
