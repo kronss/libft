@@ -16,11 +16,16 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = src
 
+#******************************************************************************#
+# HEADER
+#******************************************************************************#
 INC_NAME = libft.h
 INC_DIR = inc
 INC = $(addprefix $(INC_DIR)/, $(INC_NAME))
 
-
+#******************************************************************************#
+# OBJECT/SOURCES
+#******************************************************************************#
 OBJ_NAME = ft_memset.o \
 	ft_bzero.o \
 	ft_memcpy.o \
@@ -93,11 +98,10 @@ OBJ_NAME = ft_memset.o \
 	ft_max.o \
 	ft_atol.o \
 	q_sort.o
-
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_NAME))
 
-
+#******************************************************************************#
 .PHONY: all clean fclean re
 
 all: $(NAME)
