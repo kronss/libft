@@ -108,7 +108,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INC)
-	ar rc $(NAME) $? $(INC)
+	ar rc $(NAME) $?
 	ranlib $(NAME)
 
 
