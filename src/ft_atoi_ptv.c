@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi_ptv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ochayche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 19:27:21 by ochayche          #+#    #+#             */
-/*   Updated: 2016/11/22 19:27:23 by ochayche         ###   ########.fr       */
+/*   Created: 2017/06/07 11:47:50 by ochayche          #+#    #+#             */
+/*   Updated: 2017/06/07 11:47:51 by ochayche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_bzero(void *s, size_t n)
+int			ft_atoi_ptv(char *str)
 {
-	size_t	i;
+	int	i;
+	int	res;
 
 	i = 0;
-	if (n)
+	res = 0;
+	if (!ft_isdigit(str[i]))
+		return (-1);
+	while (ft_isdigit(str[i]))
 	{
-		while (i < n)
-		{
-			*((unsigned char*)s + i) = 0;
-			i++;
-		}
+		if (res > 214748364 || (res == 214748364 && str[i] >= '8'))
+			return (-1);
+		res = res * 10 + str[i] - '0';
+		++i;
 	}
+	return (str[i] == '\0') ? (res) : (-1);
 }
