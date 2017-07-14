@@ -6,7 +6,7 @@
 /*   By: ochayche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/04 13:28:59 by ochayche          #+#    #+#             */
-/*   Updated: 2017/03/04 13:29:02 by ochayche         ###   ########.fr       */
+/*   Updated: 2017/07/14 14:58:20 by ochayche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		aux(int n, int b, char *ans, int *p)
 {
-	char	base[];
+	char	*base;
 
 	base = "0123456789abcde";
 	if (n <= -b || b <= n)
