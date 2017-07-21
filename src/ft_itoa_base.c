@@ -16,7 +16,7 @@ static void		aux(int n, int b, char *ans, int *p)
 {
 	char	*base;
 
-	base = "0123456789abcde";
+	base = "0123456789abcdef";
 	if (n <= -b || b <= n)
 		aux(n / b, b, ans, p);
 	ans[(*p)++] = base[ft_abs(n % b)];
