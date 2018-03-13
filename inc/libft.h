@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# define BUFF_SIZE 4096
+# define BUFF_SIZE 1024
 
 # define STDIN	0
 # define STDOUT	1
@@ -113,5 +113,6 @@ int					ft_max(int a, int b);
 long				ft_atol(const char *str);
 void				q_sort(int *s_arr, int first, int last);
 char				*ft_itoa_base(int value, int base);
+void				ft_delnode(t_lst **head, t_lst *lst);
 
 #endif
